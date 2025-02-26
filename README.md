@@ -2,9 +2,10 @@
 
 Welcome to the project documentation. Below you'll find a list of all available pages.
 
+
 ## 📄 Available Routes
 
-*Last updated: Wed, 10:58 19-02-2025 WIB*
+*Last updated: Wed, 09:51 26-02-2025 WIB*
 
 🚧 No pages available yet.
 
