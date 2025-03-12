@@ -49,7 +49,7 @@
             <input type="hidden" name="proses" value="Proses Nilai">
 
             <!-- Tombol Submit -->
-            <button type="submit"
+            <button type="submit" name="submit"
                 class="w-full bg-indigo-600 text-white py-2 px-4 rounded-md hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2">
                 Submit
             </button>
@@ -57,3 +57,22 @@
     </div>
 </body>
 </html>
+
+<?php 
+
+include_once '../../Pertemuan-4/daftar_nilai.php';
+
+$proses = $_POST['proses'];
+
+if (!empty($proses)) {
+    $daftar_nilai[] = new NilaiMahasiswa(
+        $_POST['nama'],
+        $_POST['matkul'],
+        $_POST['nilai_uts'],
+        $_POST['nilai_uas'],
+        $_POST['nilai_tugas']
+    );
+}
+
+
+?>
