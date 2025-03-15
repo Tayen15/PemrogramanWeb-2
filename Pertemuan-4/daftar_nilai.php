@@ -1,13 +1,11 @@
 <?php
 require_once "class.php";
-session_start(); // Mulai session untuk menyimpan data
+session_start(); 
 
-// Array untuk menyimpan daftar mahasiswa
 if (!isset($_SESSION["daftar_mahasiswa"])) {
      $_SESSION["daftar_mahasiswa"] = [];
 }
 
-// Cek apakah form dikirim
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
      $nama = $_POST["nama"];
      $mata_kuliah = $_POST["mata_kuliah"];
@@ -17,7 +15,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
      // Validasi sederhana
      if (!empty($nama) && !empty($mata_kuliah) && is_numeric($nilai_uts) && is_numeric($nilai_uas) && is_numeric($nilai_tugas)) {
-          // Simpan data dalam array session
           $_SESSION["daftar_mahasiswa"][] = new NilaiMahasiswa($nama, $mata_kuliah, $nilai_uts, $nilai_uas, $nilai_tugas);
      }
 }
@@ -30,45 +27,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
      <meta charset="UTF-8">
      <meta name="viewport" content="width=device-width, initial-scale=1.0">
      <title>Input Nilai Mahasiswa</title>
-     <style>
-          body {
-               font-family: Arial, sans-serif;
-               margin: 20px;
-          }
-
-          form {
-               margin-bottom: 20px;
-               max-width: 400px;
-               padding: 15px;
-               background: #f4f4f4;
-               border-radius: 5px;
-          }
-
-          label,
-          input,
-          button {
-               display: block;
-               width: 100%;
-               margin-bottom: 10px;
-          }
-
-          table {
-               width: 100%;
-               border-collapse: collapse;
-               margin-top: 20px;
-          }
-
-          th,
-          td {
-               border: 1px solid black;
-               padding: 10px;
-               text-align: center;
-          }
-
-          th {
-               background: #ddd;
-          }
-     </style>
 </head>
 
 <body>
@@ -93,7 +51,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
      </form>
 
      <h2>Daftar Nilai Mahasiswa</h2>
-     <table>
+     <table border="1" width="100%" style="border-collapse: collapse;">
           <tr>
                <th>No</th>
                <th>Nama</th>
